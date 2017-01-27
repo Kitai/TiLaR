@@ -1,0 +1,467 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{linguex}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{tabularx}
+\usepackage{tabto}
+\usepackage{array}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{pbox}
+\usepackage{multirow} 
+\usepackage[normalem]{ulem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[gen]{eurosym}
+\usepackage{times}
+\usepackage{fancyhdr}
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\firstrefdash}{}
+\newcommand\posscite[1]{\citeauthor{#1}'s (\citeyear{#1})}
+\newcommand{\sem}[2]{\mbox{$[\![${\sf #2}$]\!]^{#1}$}} % use \sf in brackets
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+\usepackage{authblk}
+%\usepackage{gb4e}
+%\usepackage[equation]{gb4e-salt}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{eurosym}
+\setlength{\bibsep}{0.0pt}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{CF}{RGB}{20,20,20}
+\definecolor{N}{RGB}{100,100,100}
+\definecolor{CT}{RGB}{230,230,230}
+%\usepackage{setspace}
+%\doublespacing
+
+%%%%%%%%%%%%
+%EDIT COMMANDS
+%%%%%%%%%%%%
+\definecolor{darkgreen}{rgb}{0.1,0.6,0.1}
+\newcommand{\changeJR}[2]{\textcolor{gray}{{\scriptsize\sout{#1}}\-}\textcolor{magenta}{#2}}
+\newcommand{\nbJR}[1]{\textcolor{magenta}{{\scriptsize#1}}}
+\newcommand{\addJR}[1]{\textcolor{magenta}{#1}}
+\newcommand{\changeFS}[2]{\textcolor{gray}{{\scriptsize\sout{#1}}\-}\textcolor{red}{#2}}
+\newcommand{\nbFS}[1]{\textcolor{red}{{\scriptsize#1}}}
+\newcommand{\addFS}[1]{\textcolor{red}{#1}}
+\newcommand{\changeCB}[2]{\textcolor{gray}{{\scriptsize\sout{#1}}\-}\textcolor{darkgreen}{#2}}
+\newcommand{\nbCB}[1]{\textcolor{darkgreen}{{\scriptsize#1}}}
+\newcommand{\addCB}[1]{\textcolor{darkgreen}{#1}}
+\newcommand{\changeJZ}[2]{\textcolor{gray}{{\scriptsize\sout{#1}}\-}\textcolor{orange}{#2}}
+\newcommand{\nbJZ}[1]{\textcolor{orange}{{\scriptsize#1}}}
+\newcommand{\addJZ}[1]{\textcolor{orange}{#1}}
+\newcommand{\changeLT}[2]{\textcolor{gray}{{\scriptsize\sout{#1}}\-}\textcolor{blue}{#2}}
+\newcommand{\nbLT}[1]{\textcolor{blue}{{\scriptsize#1}}}
+\newcommand{\addLT}[1]{\textcolor{blue}{#1}}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Developmental insights into gappy phenomena}
+
+
+\title{Developmental insights into gappy phenomena: Comparing presupposition, implicature, homogeneity, and vagueness
+%\author{}
+\thanks{For helpful feedback and discussion, we would like to thank Emmanuel Chemla, Stephen Crain, Alexandre Cremers, and Manuel Kri\v{z}. The research leading to this work was supported by the European Research Council under the European Union's Seventh Framework Programme (FP/2007-2013) / ERC Grant Agreement n.313610, by ANR-10-IDEX-0001-02 PSL* and ANR-10-LABX-0087 IEC, by the Australian Research Council Centre of Excellence in Cognition and its Disorders (CE110001021), and by NSF grant BCS-1349009 to Florian Schwarz.}}
+%\author{Lyn Tieu, Cory Bill, J\'er\'emy Zehr, Jacopo Romoli, Florian Schwarz}
+\author{Lyn Tieu$^1$, Cory Bill$^2$, J\'er\'emy Zehr$^{3}$, Jacopo Romoli$^{4}$, Florian Schwarz$^{3}$\\
+       $^1$Laboratoire de Sciences Cognitives et Psycholinguistique, Ecole Normale Sup\'{e}rieure, Paris\\
+       	$^2$Department of Cognitive Science, Macquarie University, Sydney\\
+	$^3$University of Pennsylvania\\
+	$^4$University of Ulster\\
+      }\renewcommand\Authfont{\small}
+       \renewcommand\Affilfont{\itshape}
+\date{January 1, 2016}
+
+
+
+\begin{document}
+\maketitle
+%\vspace{-5em}
+\begin{abstract} 
+\noindent There exist various sentence types in natural language that, under certain circumstances, are evaluated as neither true nor false. For instance, in a context in which the \textit{presupposition} of a sentence is not satisfied, it is intuitively rather difficult to assess what the truth value of the sentence should be. A common theoretical approach is to characterize the status of such a sentence with a third value of one kind or another. In this paper, we consider children's acquisition of four linguistic phenomena that can give rise to `gappy' judgments that correspond neither to True nor False: scalar implicature, presupposition, homogeneity, and vagueness. We discuss how young children's interpretations of such sentences can provide insight into how these phenomena should be treated within semantic theories. 
+\end{abstract}
+
+\noindent \textbf{Keywords:} Scalar implicature; Presupposition; Homogeneity; Vagueness; Truth value gaps
+
+\section{Introduction}
+
+In the formal study of meaning, the notion of truth conditions -- the conditions under which a sentence is true -- plays a crucial role:~to know the meaning of a sentence like \Next is to know under what conditions \Next would be true. A speaker of English can be expected, for instance, to recognize that \Next is true in a context in which it is in fact raining and false if it is not. Such a speaker can provide a \textit{truth value judgment} for \Next on the basis of its \textit{truth conditions} and knowledge about the situation in which \Next is evaluated. 
+
+\ex. It is raining.
+
+In order to understand whether children understand sentences in an adult-like way, one common methodology involves targeting precisely children's knowledge of the conditions that must hold in order for the sentence to be true. For instance, the Truth Value Judgment Task involves presenting young children with short stories, after which they must judge whether a sentence is true or not given the events that unfolded in the story (\citealt{Crain:1998,Crain:2000}). This task has been used successfully with children as young as three years of age, to test their knowledge of a range of syntactic and semantic phenomena.
+
+But now consider the sentence in \Next, minimally different from \Last.
+
+\ex. Jack knows it is raining.
+
+Whether or not it is actually raining not only bears on whether the sentence is true or false, but also whether it can be uttered felicitously. The standard idea is that the sentence \textit{presupposes} that it is raining, and \textit{asserts} that Jack has knowledge of this state of affairs. In a context in which it is raining, we can evaluate whether \Last is true or false, depending on Jack's knowledge state. However, in a context in which it is not raining, the presupposition of the sentence is not satisfied, and it is intuitively more difficult to assess what the truth value of the sentence should be. A common theoretical approach to dealing with such cases of {\it presupposition failure} is to characterize the status of the sentence with a third value of one kind or another. 
+
+In addition to \textit{presupposition failure}, there are various other phenomena in natural language that cause sentences to be neither clearly true nor clearly false in a given state of affairs. In this paper, we will consider four such cases, and argue that young children's interpretation of sentences in such situations can provide insight into how these phenomena should be treated in a semantic theory of the adult grammar. We will begin by introducing the four phenomena, as well as an adult psycholinguistic study that will serve as a comparison point for the acquisition studies. 
+
+\subsection{The phenomena}\label{phenomena}
+
+The phenomena we will address are presupposition, scalar implicature, homogeneity, and vagueness. While we will group these four phenomena together in our discussion, we hasten to note that they do not necessarily require a uniform analysis, e.g., as involving a truth value gap or some third value status. In the discussion that follows, we will not commit ourselves to a unified theoretical approach. Rather, we will discuss them together on the basis of native speaker intuitions and experimentally elicited judgments, which suggest that in particular contexts (namely so-called \textit{gappy contexts}), they can give rise to a similar feeling of unease or indeterminacy. 
+
+Now let us consider examples of each that will be pertinent to our discussion of the acquisition studies. First, imagine a scenario in which Jack was a spectator at a race but never actually ran in the race. In such a scenario, the sentence in \Next is neither clearly true nor clearly false.
+
+\ex. \label{presup} \textit{Context: Jack did not run in the race.} \\
+\textit{Sentence:} Jack stopped running.
+
+Such cases are standardly treated as examples of \textit{presupposition failure}. Assuming the verb \textit{stop} in \Last triggers the presupposition that \textit{Jack ran} previously, the sentence is neither clearly true nor false when the presupposition is not satisfied. 
+
+Another example of lack of clear Truth or Falsity, much more widely studied in the developmental literature, involves the use of scalar terms. While the literal meaning of the sentence in \Next is in principle compatible with a situation in which four out of four apples are red, adult speakers nevertheless generally find the sentence to be an inadequate description of the situation, which can lead to a False judgment.
+
+\ex. \label{si} \textit{Context: Four of four apples are red.} \\
+\textit{Sentence:} Some of the apples are red.
+
+This is usually taken to be the case because the sentence in \Last triggers the \textit{scalar implicature} that \textit{Not all of the apples are red} (\citealt{Grice:1975}). When the literal meaning of the sentence is true but the implicature is false, an oddness arises (for discussion, see \citealt{Magri:2009,Magri:2014}). 
+
+A third case involving lack of clear Truth or Falsity involves so-called \textit{homogeneity effects} that arise from the use of plural definite descriptions. In a scenario where two out of four apples are red, neither the positive \Next[a] nor negative \Next[b] appear to be clearly true, or clearly false.
+
+\ex. \label{hmg} \textit{Context: Two of the apples are red and two of the apples are green.} 
+\a. \textit{Sentence:} The apples are red.
+\b. \textit{Sentence:} The apples aren't red.
+
+Finally, certain instances of \textit{vague} predicates also give rise to a similar effect. In a scenario where there is a bear that is mid-sized, the sentences in \Next are neither clearly true nor clearly false. 
+
+\ex. \label{vague} \textit{Context: The bear is average-sized.} 
+\a. \textit{Sentence:} The bear is big.
+\b. \textit{Sentence:} The bear is not big. 
+
+The examples above provide us with four kinds of sentences that, in certain situations, do not correspond clearly to either of the two truth values True and False. Following terminology in \cite*{Cremers:2015a}, we will refer to the contexts described above as `gappy' contexts, and the sentences that they render neither true nor false, as `gappy' sentences.
+
+\subsection{The starting point}
+
+Each of the phenomena outlined in Section \ref{phenomena} has been studied in great detail in previous theoretical research. While we describe them in a uniform way with respect to the `gappiness' that they can give rise to, much of the existing theoretical research has investigated the phenomena independently of each other. There have been some theoretical attempts, however, to unify at least some of them; for instance, \cite{Chemla:2009} and \cite{Romoli:2014} attempt to unify certain cases of presupposition and scalar implicature, and \cite{Zehr:2014} explores potential unifications of presupposition and vagueness. This is an area where careful, theoretically informed empirical research can be highly informative, and indeed recent experimental research has offered new ways of empirically characterizing the potential connections and differences among these phenomena. Such empirical methods and data are useful for assessing whether some or all of the phenomena above should receive a unified treatment within linguistic theories.
+
+One recent example is a study reported in \cite*{Cremers:2015a}. These authors collected probability judgments from adult native speakers, using the treatment of gaps as a diagnostic for differentiating gappy phenomena. For example, participants would see three cards, one containing a yellow square, one containing a green square, and one containing an orange circle. In such a scenario, the presuppositional sentence in \Next[b] would be \textit{true} if describing the card with the yellow square, \textit{false} if describing the card with the green square, and \textit{gappy} if describing the card with the orange circle.
+
+\ex. \a. \textit{Context: There is a yellow square, a green square, and an orange circle.} 
+\b. \textit{Sentence:} The square is yellow.
+
+Participants had to assign the probability of the sentence being true for a random selection of one of the three cards. That is, they had to decide what this probability would be, given one of the three cards would be selected at random. They were given multiple choices, and their choice of probability would allow us to see how the participant treated the gap case, e.g., the orange circle in \Last. For instance, if the participant decided the probability of selecting a yellow square was 1/3, then the gap case of the orange circle counted as a failure (`false'). If the participant said the probability was 1/2, then one could infer that for that participant, the gap case was ignored for the purposes of calculating the probability. But if the participant said the probability of selecting a yellow square was 2/3, then the gap case presumably counted as a success (`true').
+
+Cremers et al.~report that their adult participants treated (the gap cases associated with) implicature and presupposition differently from each other and from vagueness and homogeneity, whereas vagueness and homogeneity were treated alike. Such results are \textit{prima facie} at odds with accounts that attempt to unify scalar implicature and presupposition, such as \cite{Chemla:2009} and \cite{Romoli:2014}. On the other hand, the results also suggest a parallel between vagueness and homogeneity, which is unexpected on both presuppositional (\citealt{Gajewski:2005}) and scalar implicature (\citealt{Magri:2014}) accounts of homogeneity.
+
+Psycholinguistic work with adults is one way to get at potential parallelisms and differences among the various gappy phenomena. With successful experimental designs and methods, researchers can pull out any existing differences between the phenomena, as reflected in different behavioural and/or processing measures from adults. Yet another rich source of data that may allow us to get at the same questions lies in child language data. Child language provides a useful tool for investigating the nature of these semantic phenomena, and also has the potential to adjudicate between competing analyses. The time course of acquisition, for example, can provide hints to common underlying interpretive mechanisms across phenomena. In the remainder of this paper, we will discuss recent studies that turn to acquisition to shed light on the potential connections between subsets of the gappy phenomena described in Section \ref{phenomena}. We make the argument that child language data provide a useful tool for distinguishing among gappy phenomena, on the one hand, and for identifying phenomena that should be analyzed uniformly, on the other. In particular, two recent studies have respectively compared scalar implicature with presupposition, and homogeneity with scalar implicature. We also describe how developmental data may shed light on the potential connection between vagueness and presupposition. The findings of these developmental studies have important implications for how these phenomena should be treated within linguistic theories. 
+
+For each study that we describe in the subsequent sections, we will begin by introducing the two phenomena being compared, present a brief theoretical background, describe the relevant acquisition study, and end by elaborating upon the implications of the study for theories of the gappy phenomena more generally.
+
+As we move through these studies, we will touch upon the following questions:
+
+\ex.\label{questions}
+\a. How are similarities and differences among gappy phenomena reflected in child language?
+\b. Are young children sensitive to truth value gaps, or do they display strictly bivalent truth values?
+\c. What methods allow us to tap into children's sensitivity to truth value gaps?
+%\vspace{5mm}
+%\setlength{\fboxsep}{10pt}
+%\setlength{\fboxrule}{2pt}
+%\noindent
+%\fbox{\parbox[c][8.5em][t]{.95\textwidth}{
+%\vspace{-5mm}\center{\textbf{I. Questions}}
+%\begin{itemize}[leftmargin=0.5cm]\itemsep1pt \parskip0pt \parsep0pt
+%\item How are similarities and differences among gappy phenomena reflected in child language?
+%\item Are young children sensitive to truth value gaps, or do they display strictly bivalent truth values?
+%\item What methods allow us to tap into children's sensitivity to truth value gaps?
+%\end{itemize}
+%}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Presupposition and implicature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The first study we will consider is \cite*{Bill:2014b}, which sought to compare scalar implicatures such as the one in \ref{billsi} and presuppositional sentences such as the one in \ref{billpres}. The goal of obtaining such comparative data was to test theories such as \cite{Chemla:2009} and \cite{Romoli:2014}, both of which attempt to provide a unified explanation for the two phenomena. 
+%\nbJR{I would use indirect scalar implicatures - not all giraffes ..etc} \nbFS{I went ahead and made that change}
+
+% \ex. \label{billsi} \a. \label{sen:dsi1} Some of the giraffes have scarves. 
+% \b. \label{inf:dsi1} $\rightsquigarrow$ \textit{Not all of the giraffes have scarves} 
+\ex. \label{billsi} \a. \label{sen:dsi1} Not all of the giraffes have scarves. 
+\b. \label{inf:dsi1} $\rightsquigarrow$ \textit{Some of the giraffes have scarves} 
+
+\ex. \label{billpres} \a. \label{sen:p1} The bear didn't win the race. 
+\b. \label{inf:p1} $\rightsquigarrow$ \textit{The bear participated in the race}
+
+Let us now briefly review some theoretical background, both on the traditional distinct analyses for the two phenomena, as well as on unified approaches.  
+
+\subsection{Theoretical background}\label{sec:thebac}
+
+The traditional perspective on scalar implicatures and presuppositions treats them as very different from each other: scalar implicatures are standardly considered to arise from reasoning about the speaker's intentions (see \citealt{Grice:1975} and much subsequent work), while presuppositions are typically analyzed as appropriateness conditions to be satisfied in the conversational context (see \citealt{Stalnaker:1974, Karttunen:1974, Heim:1982}, among others). 
+
+For presuppositions, the idea is that a sentence like \ref{pp} is only felicitous in a context in which the presupposition in \ref{p} is already assumed to be in the common ground (\citealt{Stalnaker:1974, Karttunen:1974, Heim:1982, Heim:1983}; see also \citealt{Beaver:2010} for an introduction to presuppositions). According to this perspective, presuppositions are always present in sentences where their triggers (e.g., \textit{win}) are used. 
+
+\ex. \a. \label{pp} The bear didn't win the race. 
+\b. \label{p} $\rightsquigarrow$ \textit{The bear participated in the race}
+
+Now notice that in some cases it appears possible to suspend the presupposition, as in \ref{sen:pd}, where the continuation directly contradicts the presupposition that the bear participated in the race. This suspension of the presupposition gives rise to a meaning that can be paraphrased as in \ref{sen:pdm}. 
+
+\ex. \a. \label{sen:pd} The bear didn't win the race... he didn't even participate! 
+\b. \label{sen:pdm} It's not true that the bear both participated and won the race.
+
+To account for this possibility of suspension, the approaches mentioned above assume an extra mechanism, through which the presupposition is `locally accommodated' in the scope of negation (\citealt{Heim:1983}; see also \citealt{Fintel:2008b}). The application of this mechanism gives rise to the meaning paraphrased in \ref{sen:pdm}, which is compatible with the continuation in \ref{sen:pd}. 
+
+Turning to implicature, traditional approaches treat scalar implicatures as an independent phenomenon, following works like \cite{Grice:1975} and \cite*{Horn:1972}. On this approach, the source of scalar implicatures can be understood as involving general principles that are invoked when we interact with each other in conversation, in the following manner. Consider again the implicature in \ref{sib}, which arises from the use of \textit{some} in \ref{sia}. The hearer will assume that the speaker is being as informative as she can be. Given this, notice that the speaker uttered \ref{sia}, rather than the more informative \ref{sic}. Assuming the speaker is being as informative as she can be, the hearer can infer that the speaker's reason for not uttering the stronger alternative containing \textit{all} is that the speaker believes the stronger alternative to be false, and a further step of strengthening leads to the conclusion that \ref{sic} must be false, hence the inference in \ref{sib}. Parallel reasoning applies to so-called strong scalar items, such as \textit{all}, under negation, as illustrated in \ref{exisi}, based on the alternative in \ref{isic}.
+
+\ex.\label{exsi}\a. \label{sia} Some of the giraffes have scarves.  
+\b. \label{sib} $\rightsquigarrow$ \textit{Not all of the giraffes have scarves}
+
+\ex. \label{sic} All of the giraffes have scarves.
+
+\ex.\label{exisi}\a. \label{isia} Not all of the giraffes have scarves.  
+\b. \label{isib} $\rightsquigarrow$ \textit{Some of the giraffes have scarves}
+
+\ex. \label{isic} It is not the case that some of the giraffes have scarves.
+
+In contrast to this traditional approach to scalar implicatures and presuppositions, recent accounts of these inferences have attempted to bring them closer together. In particular, some accounts treat certain presuppositions, such as the presupposition associated with the verb \textit{win} \ref{p}, as a kind of scalar implicature (\citealt{Simons:2001, Abusch:2002, Abusch:2009, Chemla:2009, Romoli:2012c, Romoli:2014}). The main argument for this analysis comes from differences that have been observed between the presupposition of \textit{win} and those of other presupposition triggers, related to the ease with which the different presuppositions can be suspended, and to their behaviour in quantificational sentences (see \citealt{Abusch:2009} and \citealt{Romoli:2014} for discussion). 
+
+The basic idea is that the inference \ref{p} is derived from \ref{pp} as a scalar implicature, following the same line of reasoning as in \ref{exisi}-\ref{isic}. On this approach, a stronger alternative to \ref{sen:p3} is \ref{sen:pa1}. Given that the speaker chose to utter the weaker \ref{sen:p3} rather than the more informative \ref{sen:pa1}, the hearer infers that the latter must be false, deriving the inference in \ref{inf:p3}.
+
+\ex.\label{expres} \a. \label{sen:p3} The bear didn't win the race. 
+\b.\label{inf:p3} $\rightsquigarrow$ \textit{The bear participated in the race} 
+
+\ex. \label{sen:pa1} The bear didn't participate in the race. 
+
+This approach unifies scalar implicatures like \ref{exsi} and \ref{exisi} with presuppositions like \ref{expres}. It therefore predicts that, everything else being equal, we should observe uniform behaviour across the two kinds of inferences, and moreover that the two should display similar developmental trajectories in young children. This latter prediction was tested in a study by \cite{Bill:2014b}, which we describe in the next section. 
+
+\subsection{Experiment: \cite*{Bill:2014b}}\label{sec:experiment}
+
+\cite*{Bill:2014b} tested 20 monolingual English-speaking adults and 30 monolingual English-speaking children on the interpretation of sentences like those in \ref{exsi}, \ref{exisi}, and \ref{expres}. The children were split into two age groups, consisting of sixteen 4--5-year-olds (4;01--5;05, M=4;06) and fourteen 7-year-olds (7;00--7;12, M=7;04). The experiment involved a picture selection task, with participants being shown a series of scenes involving cartoon animals participating in races. Each trial consisted of three pictures; a first picture that set the scene and made the subsequent use of negation felicitous, and then two test pictures side by side. On the left was a visible picture, and on the right was a covered picture (an image that was hidden by a black box).
+%\footnote{Throughout the training trials the covered picture was revealed to the participants at the end of each trial. However, throughout the rest of the experiment the participants were not shown the covered picture, in order to ensure that participants' judgments would not be influenced by any interpretation options suggested by the covered picture.}
+
+On each trial, the participant was presented with a short description of the first picture, followed by a test sentence that participants were told described only one of the two test pictures (either the visible one or the hidden one). The participant's task was to judge which of these two test pictures the test sentence was describing, and then to provide a short justification for their decision. Examples of the target sentences for the presupposition and scalar implicature conditions are provided in \Next and \NNext, respectively.
+
+\ex. \textit{Context (visible test picture):} The bear is at home and did not participate in the race. \\
+\textit{Sentence:} The bear didn't win the race.
+
+\ex. \textit{Context (visible test picture):} All of the elephants are holding balloons. \\
+\textit{Sentence:} Some of the elephants have balloons.
+
+Crucially, the visible pictures in the test trials, while consistent with the literal meaning of the test sentences, were incompatible with the inference (either the presupposition or the scalar implicature). For example, the visible picture paired with \Last depicted all of the elephants having balloons, and so was not consistent with the scalar implicature \textit{Not all of the elephants have balloons}. Selection of the covered picture on such trials was thus interpreted as evidence for generation of the associated inference. The authors also included control trials to make sure that participants were capable both of selecting the covered picture and of selecting the visible picture, when these were consistent with the relevant inferences. 
+
+\cite{Bill:2014b} reported that adults selected the visible picture in the presupposition condition more so than in the scalar implicature condition; children, in contrast, were more likely to select the covered picture in the presupposition condition, compared to the scalar implicature condition (see their paper for details regarding data analysis). These results suggest that neither adults nor children treat presupposition and scalar implicature alike, and moreover that children at this age are not adult-like in their treatment of the two phenomena. 
+
+\subsection{Implications}
+
+Now let us consider \posscite{Bill:2014b} results in light of the questions we raised in \ref{questions}. The data reported in \cite{Bill:2014b} show that children and adults do not treat presupposition and implicature alike. While children treat the two phenomena differently from the way that adults do, the two groups nevetheless differentiate between the two phenomena in their respective behavioural patterns. Children's selections of the covered pictures indicated that they generated the presupposition at much higher rates than the scalar implicature interpretation. On the other hand, adults appeared to generate scalar inferences much more often, while in the presupposition condition they responded as though the presupposition were not present. \posscite{Bill:2014b} explanation of the presupposition results is that adults, but not children, were able to locally accommodate the presupposition under negation, leading to the interpretation in \Next[b].
+
+\ex.\a. The bear didn't win the race.
+\b.  It's not true that the bear both participated and won the race.
+
+As mentioned earlier, the unified approach to these phenomena would seem to predict that, all else being equal, participants' responses should have come out parallel across the conditions. As we have seen, however, this prediction was not borne out by the results. On the other hand, the present findings are more in line with the traditional perspective, which treats presupposition and implicature as distinct phenomena, derived through different mechanisms. This approach is compatible with an asymmetry in participants' behavioural responses to the two kinds of inferences. Children access the basic meanings of the relevant sentences: sentences containing scalar terms are interpreted literally, on the weak meaning of the scalar expression, and sentences containing presupposition triggers are interpreted presuppositionally. Adults, on the other hand, can access derived meanings, computing scalar implicatures from the scalar expressions, and accommodating presuppositions locally under negation. As things stand, unified approaches cannot capture this discrepancy between the two groups.
+
+As a consequence, \posscite{Bill:2014b} results do not provide support for analyses that unify the derivation of scalar implicatures and presuppositions; minimally, such unified theories would have to be supplemented with additional assumptions. According to the developmental data, then, presupposition and implicature should be treated distinctly.
+
+Finally, let us consider the method that was used in the study. The covered picture task is binary in nature, but the judgments it elicits differ in a crucial way from simple yes/no judgments (such as those one would obtain using a standard truth value judgment task). The participant can only see one of two possible situations depicted; the participant cannot see what is hidden by the black box. The rationale is that the participant will consider whether the visible picture is an adequate match for the target sentence; but if they can imagine a scenario that is a `better' match for the sentence -- whether in terms of truth or falsity or felicity/appropriateness -- they should choose the covered picture. What are the implications of such a method for the assignment of truth values we discussed in the Introduction, namely True, False, and a gappy third value? 
+
+On the one hand, while response times were not collected, at least anecdotally the children and adults on \posscite{Bill:2014b} study were generally consistent in their responses, and did not overly hesitate in their responses. This suggests that they generated a particular interpretation (for children the basic meaning and for adults the derived meaning) and responded on the basis of this interpretation. Now, if the visible picture was selected, we can assume the sentence was true on the interpretation accessed by the participant. However, given the nature of the task, the source of the covered picture selection may be less straightforward: it could be that the sentence was false on the interpretation accessed by the participant, or it could be that the sentence gave rise to a truth value gap (neither true nor false). Further studies could make use of more graded response options to allow for determination of third value type responses. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Homogeneity and implicature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The next developmental comparison we will turn to involves homogeneity and scalar implicature. Sentences containing plural definite descriptions give rise to so-called \textit{homogeneity} effects (see, among others, {\citealt*{Lobner:1987, Schwarzschild:1994, Breheny:2005, Gajewski:2005, Buring:2013, Spector:2013, Magri:2014}). Imagine some scenarios involving four coloured toy trucks, as described in \ref{contexts}. 
+
+\ex. \label{contexts} Critical contexts
+\a. \textsc{all:} \textit{4 of 4 trucks are blue}
+\b. \textsc{none:} \textit{0 of 4 trucks are blue}
+\c. \textsc{gap:} \textit{2 of 4 trucks are blue}
+
+The positive \Next[a] is clearly true in an \textsc{all} context like \Last[a], while the negative \Next[b] is clearly true in a \textsc{none} context like \Last[b]. 
+
+\ex. \label{the} \a. \label{thepos} The trucks are blue.
+\b. \label{theneg} The trucks aren't blue.
+
+But there is a gap between these two possible situations, namely the case in \LLast[c]: imagine that two of the trucks are blue and two are yellow. In such a context, the positive \Last[a] and negative \Last[b] are considered to be neither true nor false, corresponding either to a third truth value or to none at all. \cite{Kriz:2015} provide experimental evidence for such a \textit{truth value gap}. Their experiment, conducted with adult English speakers, reveals that adults perceive sentences like \Last[a] and \Last[b] as neither completely true nor completely false descriptions of contexts that violate homogeneity, e.g., \LLast[c]. 
+
+\subsection{Theoretical background}
+
+There are a few accounts of homogeneity in the literature. The earliest proposals treat homogeneity as a presupposition (\citealt{Schwarzschild:1994,Lobner:2000,Gajewski:2005}). On such accounts, sentences like \Last carry a presupposition that either all of the trucks are blue or none of the trucks are blue. In a gap context, this presupposition is not satisfied, and therefore the sentences are associated with a truth value gap.
+
+An alternative approach is to say that the definite description itself is either existential or universal, but crucially its interpretation involves a kind of indeterminacy or vagueness. On such approaches, a sentence only has a definite truth value if it has that same truth value no matter how this indeterminacy is resolved (\citealt{Spector:2013, Kriz:2015a}). For example, assume \textit{the trucks} in \ref{the} has the two possible interpretations in \Next, depending on quantificational force: 
+
+\ex. \a. Some of the trucks are blue.
+\b. All of the trucks are blue.
+
+The sentence in \ref{thepos} would then be true if both \Last[a] and \Last[b] are true, i.e.~if all of the trucks are blue, and false if both \Last[a] and \Last[b] are false, i.e.~if none of the trucks are blue. In a gap scenario, neither condition is satisfied, and so \ref{thepos} can be neither true nor false. Likewise, \ref{theneg} can be neither true nor false, since the negations of \Last[a] and \Last[b] would be neither both true nor both false.
+
+Yet another approach treats homogeneity as a kind of scalar implicature. According to \cite{Magri:2014}, plural definites have a literal existential meaning that can be strengthened to the universal meaning through an implicature. As we have seen, scalar implicatures arise through the comparison of assertions with alternatives that could have been uttered but were not. This kind of \textit{strengthening} can be captured through the application of a covert, grammaticalized exhaustification operator \textsc{exh} (\citealt*{Fox:2007,Chierchia:2011}). Consider its application in \Next, using our scalar implicature example from \ref{exsi}:
+
+\ex. \textsc{exh}(Some of the giraffes have scarves) \\
+= Some of the giraffes have scarves and \textsc{not}(all of the giraffes have scarves) 
+
+In \Last, \textsc{exh} takes the proposition containing \textit{some} and affirms this proposition  while negating the stronger alternative containing \textit{all} (for further discussion, see \citealt{Groenendijk:1984,vanRooijSchulz:2004,Spector:2007,Fox:2007,Chierchia:2011}). In the case of plural definite descriptions, Magri assumes that \textit{some} is an alternative to the definite (just as \textit{all} is an alternative to \textit{some} in \Last. By applying recursive exhaustification, he derives what is effectively a universal meaning for the plural definite description:
+
+\ex. \textsc{exh}(\textsc{exh}(The trucks are blue)) \\
+= \textsc{exh}(The trucks are blue) and \textsc{not}(\textsc{exh}(some of the trucks are blue)) \\
+= Some of the trucks are blue and \textsc{not}(some but not all of the trucks are blue) \\
+= All of the trucks are blue
+
+Given the large amount of existing literature on children's acquisition of scalar implicatures, \cite*{Tieu:2015i,Tieu:2015k} seize upon the opportunity to empirically compare homogeneity and implicature in child language. Of the three existing accounts, the scalar implicature account makes testable predictions with respect to the timecourse of acquisition. In particular, if homogeneity and standard cases of scalar implicatures are derived in the same way, then children should not be expected to display sensitivity to violations of homogeneity until they are capable of computing implicatures. Notice that the implicature associated with homogeneity requires a double application of the exhaustivity operator. One could conceivably expect then that homogeneity should be acquired after scalar implicatures. What would \textit{not} be predicted, however, is the emergence of homogeneity before scalar implicatures. 
+
+\subsection{Experiment: Tieu, Kri\v{z} \& Chemla (2015)}
+
+\cite{Tieu:2015i,Tieu:2015k} report two experiments, one using a standard Truth Value Judgment Task (\citealt{Crain:2000}), and one using a ternary judgment task (\citealt{Katsos:2011}). They presented preschool-aged children with pictures of simple objects of different colours. On critical homogeneity target trials, children would see pictures depicting gap contexts like the one in \ref{contexts}, and were asked to judge sentences containing plural definite descriptions like \ref{the}. If children do not initially treat plural definite descriptions as imposing homogeneity, one might expect children instead to interpret the definite descriptions as existential or universal, and to interpret negative sentences containing the definite description in a negation-preserving manner. For instance, in a \textsc{gap} context, children might interpret \ref{the} along the lines of \ref{exi} or \ref{uni}. 
+
+\ex. \label{exi} \a. Some of the trucks are blue.
+\b. None of the trucks are blue.
+
+\ex. \label{uni} \a. All of the trucks are blue.
+\b. Not all of the trucks are blue.
+
+This means that we could expect three possible outcomes for children's interpretation of the plural definite description in gap contexts, as indicated in Table \ref{hmgexpect}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ c | c | c } 
+\textbf{Interpretation} & \textbf{Positive gap sentence} & \textbf{Negative gap sentence} \\
+\hline
+\hline
+\textit{Homogeneous} & Reject & Reject \\
+\hline
+\textit{Existential} & Accept & Reject \\
+\hline
+\textit{Universal} & Reject & Accept \\
+\hline
+\end{tabular}
+\caption{Expected responses to positive and negative gap sentences, according to the interpretation of the plural definite description.}
+\label{hmgexpect}
+\end{table}
+
+Collecting children's \textit{pairs of responses} to positive and negative gap sentences therefore allows us to determine what interpretation children are assigning to the plural definite description. \cite{Tieu:2015i,Tieu:2015k} also set out to assess \posscite{Magri:2014} scalar implicature theory of homogeneity, by comparing children's performance on both homogeneity targets and scalar implicature targets. On scalar implicature target trials, children would see pictures of four blue trucks, for example, and be asked to judge existentially quantified sentences such as `Some trucks are blue.' 
+
+Tieu et al.'s first experiment used a standard Truth Value Judgment Task. The authors found that children and adults differed in their treatment of the plural definite descriptions. In particular, two thirds of the 24 adult participants they tested responded in a manner consistent with a homogeneous interpretation of the plural definite description, rejecting both positive and negative sentences in gap contexts. The remaining adults responded as though they interpreted the plural definite descriptions universally.\footnote{The authors suggest that the universal behaviour follows from certain assumptions about the processing of negation. In particular, psycholinguistic studies of the processing of negation have revealed that adults may initially process only the positive component of negative sentences, only later applying the negation; see \cite{Dale:2011}, for instance, who provide mouse-tracking data showing that adults make more discrete shifts towards and then away from the incorrect direction. Tieu et al.~suggest that their adults may have initially processed the positive component of the negative homogeneity targets, e.g,. \textit{The trucks are blue}, leading to a \textit{no}-response; the subesequent addition of negation would then prompt a shift to a \textit{yes}-response.} Turning to the 24 child participants, two thirds of these children responded homogeneously, rejecting both positive and negative gappy descriptions; the remaining third, however, responded with an existential interpretation of the plural definite description, accepting the positive sentences but rejecting the negative ones. Moreover, while seven of the eight children who responded according to the \textsc{existential} interpretation also failed to compute scalar implicatures, 10 of the 16 \textsc{homogeneous} children computed implicatures.
+
+The authors take these results to suggest that children may initially adopt a scalar implicature theory of homogeneity: in the early stages of development, they lack implicatures and therefore access the literal existential interpretation of both weak scalar terms and plural definite descriptions. Once they acquire scalar implicatures, they are able to use the same mechanism to then strengthen the plural definite description to a universal meaning. Notice, however, that the existence of a group of children who compute homogeneous meanings for plural definite descriptions, but fail to compute scalar implicatures, is \textit{not} predicted by the scalar implicature theory of homogeneity. This particular finding, coupled with the fact that adults computed homogeneous meanings at much higher rates than scalar implicatures, suggests that there must be some alternative means of deriving homogeneity.
+
+Some recent research has suggested that binary judgment tasks like the TVJT may not be sensitive enough to assess children's ability to compute scalar implicatures. \cite*{Katsos:2011} in particular argue that binary tasks cannot distinguish between a greater pragmatic tolerance for underinformative descriptions and a true inability to compute implicatures. Using a ternary judgment task, where children are provided with three response options, they show that 5-year-old children can give adult-like responses to scalar implicature targets. Children are told that they can offer the puppet a small strawberry as a minimal reward, a big strawberry as a maximal reward, and a medium strawberry for those in between. Katsos and Bishop argue that the maximal reward is reserved for true and informative descriptions, the minimal reward for clearly false descriptions, and the intermediate reward for literally true but underinformative descriptions. They show that children do indeed choose to give the intermediate reward in response to scalar implicature targets.
+
+In order to get a more sensitive measure of children's knowledge of homogeneity and scalar implicatures, Tieu et al.'s second experiment made use of a ternary judgment task like that used in \cite{Katsos:2011}. In this experiment, children were given the option to reward the puppet with one strawberry, two strawberries, or three strawberries. Adapting the expected binary responses in Table \ref{hmgexpect} to a ternary judgment task, participants were categorized as giving a \textsc{homogeneous} response pattern if they gave minimal or intermediate rewards to positive and to negative homogeneity targets. They were characterized as \textsc{existential} if they gave maximal rewards to positive homogeneity targets, and minimal rewards to negative homogeneity targets. Finally, they were characterized as giving the \textsc{universal} response pattern if they gave minimal rewards to positive homogeneity targets, and maximal rewards to negative homogeneity targets. As in the first experiment, children and adults were also give a scalar implicature test, on which minimal or intermediate rewards were counted as evidence of implicatures.
+
+The authors report similar findings across the two experiments. In the ternary judgment task, children and adults again differed in their treatment of plural definite descriptions in gappy contexts. While 24 of the 26 adults displayed the \textsc{homogeneous} response pattern, only 11 of the 24 children displayed this pattern; the other 11 children displayed the \textsc{existential} response pattern, giving greater rewards for the positive homogeneity targets than the negative homogeneity targets. Moreover, none of the 11 \textsc{existential} children computed scalar implicatures, while seven of the 11 \textsc{homogeneous} children computed implicatures.%\footnote{\cite{Tieu:2015i,Tieu:2015k} also include a number of controls for potential confounds associated with the selection of the intermediate reward option. See their paper for details concerning these controls.} 
+
+\subsection{Implications}
+
+The main findings in \cite{Tieu:2015i,Tieu:2015k} can be summarized as follows. Both experiments revealed a group of children who both interpreted plural definite descriptions existentially and failed to compute scalar implicatures. Both experiments also revealed a group of homogeneous children, some of whom computed implicatures and some of whom did not. On the basis of these findings, Tieu et al.~propose a multi-stage developmental trajectory towards adult-like homogeneity. First, children start off with a weak existential meaning for plural definite descriptions. In this stage, they do not compute scalar implicatures, and do not derive homogeneity from plural definite descriptions. Once they acquire scalar implicatures, they can apply it in both cases, and therefore are able to strengthen \textit{some} to \textit{some-and-not-all} in the standard cases of implicature, and at the same time strengthen the existential meaning of the plural definite to a universal meaning. As the authors discuss, initially adopting a scalar implicature analysis of homogeneity makes sense from the learner's perspective, as it allows the learner to make sense of the seemingly universal behaviour of plural definite descriptions in upward-entailing contexts. The fact that some children managed to display homogeneity effects even without scalar implicatures, however, suggests an alternative means of deriving homogeneity.\footnote{See their paper for a proposal regarding the triggering evidence that may eventually incite the child learner to switch away from the implicature analysis of homogeneity, involving examples of plural definite descriptions embedded in downward-entailing environments.} 
+
+%\cite{Tieu:2015i,Tieu:2015k} propose that the triggering evidence that leads children to switch to the adult analysis of homogeneity is subtle, and much harder to come by. This evidence involves the use of plural definite descriptions in downward-entailing environments. They provide the example in \Next, discussed further in \cite{Kriz:2015b}.
+
+%\ex. No boy found his presents. 
+
+%In this example, the plural definite description is forced to remain in a downward-entailing environment, as it is prevented from outscoping the negative quantifier that binds it. On the implicature analysis of homogeneity, this sentence should simply be false in a situation where no boy found all of his presents, but some boys found some of their presents. Yet \cite{Kriz:2015} provide experimental data that adult speakers still judged such sentences as neither completely true nor completely false 25\% of the time. The mere availability of this `gappy' judgment poses a challenge to the scalar implicature acount, and as Tieu et al.~argue, may be sufficient to incite the child learner to switch analyses. 
+
+While \cite{Tieu:2015i,Tieu:2015k} remain agnostic about how adults derive homogeneity, their data are informative for two reasons. First, they reveal that the scalar implicature account of homogeneity, while it may not be adequate to explain the full range of data in adults, has a role to play in language development. In particular, such an analysis provides the child learner with a good approximation of the meaning of plural definite descriptions. Ultimately, the fact that there were children who displayed homogeneity effects but no scalar implicatures, suggests there must be an alternative means of deriving homogeneity. In other words, the child data provide support for the existence of at least two means of deriving homogeneity in grammar. Only one of these involves the derivation of a scalar implicature.
+
+Returning briefly to our three main questions in \ref{questions}, we see that these developmental results have implications for an adult theory of homogeneity, and shed further light on the precise nature of the potential relationship between the two phenomena under question. In particular, both similarities and differences between homogeneity and implicature are reflected in the developmental trajectory: data from the younger children show us how the two phenomena can be treated in a uniform manner (by both the linguist and the child learner), while data from older children suggest distinct analyses in the adult grammar. These data also reveal that children as young as 5 years can display sensitivity to truth value gaps, with the children rejecting (or giving intermediate rewards to) both positive and negative descriptions of contexts that violate homogeneity. Given arguments from \cite{Katsos:2011} that binary truth value judgments may not always be sufficient to reflect children's knowledge about phenomena such as implicatures, it is reassuring that the main findings from the binary truth value judgment task replicate with the use of ternary judgments.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Presupposition and vagueness}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let us now turn to a final comparison that has begun to receive attention in the adult psycholinguistics literature, but has been very little investigated in acquisition work. Here we introduce the main issues and suggest how developmental research, along the lines of what we have already described for presupposition, homogeneity, and implicature, may likewise prove insightful for theories of acquisition and of the adult grammar.
+
+As we saw in the Introduction, borderline instances of vague predicates \ref{sen:vg1} and cases of presupposition failure \ref{sen:ps1} are two examples where adult native speakers are typically unwilling to qualify a sentence as clearly true or clearly false; instead, the four sentences provided in \Next and \NNext are seen as inappropriate. As in the preceding cases we have discussed, we will describe this lack of clear Truth or Falsity as `gappy'. Interestingly, this gappiness holds for both the positive and negative counterparts of these sentences.
+
+\ex.	\label{sen:vg1}	\textit{Context: The bear is average-sized.}
+\a.	\label{sen:vg1pos}The bear is big. %$\Rightarrow$ \textit{Infelicitous}
+\b.	\label{sen:vg1neg}The bear isn't big. %$\Rightarrow$ \textit{Infelicitous}
+
+\ex.	\label{sen:ps1}	\textit{Context: The bear didn't participate in the race.}
+\a.	\label{sen:ps1pos}The bear won the race. %$\Rightarrow$ \textit{Infelicitous}
+\b.	\label{sen:ps1neg}The bear didn't win the race. %$\Rightarrow$ \textit{Infelicitous}
+
+While vagueness and presupposition have traditionally been treated distinctly in the theoretical literature, some recent approaches have begun to attempt to unify the two phenomena, in light of certain observable commonalities. Let us turn to a brief theoretical background. 
+
+\subsection{Theoretical background}
+
+Both in cases of vagueness (\citealt{mehlberg1958,fine1975:vagueness,tye1995:sorites}) and of presupposition (\citealt{vanFraassen1966:reference,fox2012,george2008}), the lack of a clear truth value judgment across the two polarities has been analyzed with the help of trivalent logics. In these systems, sentences like those in \ref{sen:vg1} and \ref{sen:ps1} are modeled with propositions that receive the third, non-bivalent truth value in the described contexts. Despite appealing to the same tools to account for these two phenomena, however, vagueness and presupposition have traditionally been conceived of as clearly distinct phenomena.\footnote{\label{TyeFN}While \cite{fine1975:vagueness} adopts the supervaluationist system previously developed by \cite{vanFraassen1966:reference} for presuppositions, he does not suggest any connection between the two phenomena. \cite{tye1995:sorites} may be the first to explicitly compare the two within such a perspective: \begin{quotation}\noindent Where a gap is due to vagueness, I maintain that something is said which is neither true nor false. I deny, however, that anything is said in the case where a gap is due to failure of reference. I am inclined to extend the latter view to gaps due to failure of presuppositions.\end{quotation}}
+
+More recent approaches diverge from the traditional view, and propose ways to unify the two phenomena. For instance, \cite{Zehr:2014} unifies the two phenomena by modeling them within a single truth-functional system containing five ordered logical values: in addition to the extreme values \textit{true} and \textit{false}, three central values correspond to the set of propositions with unsatisfied presuppositions, describing borderline cases or with both properties. A bridge principle then derives infelicity whenever a proposition of any of these non-bivalent values is used. As another example, \cite{spector2015:7valued} derives a 7-valued system meant to handle interactions between vagueness and presupposition. Importantly, whereas the 5-valued system in \cite{Zehr:2014} associates any proposition with a value on a single ordered dimension in one step, \cite{spector2015:7valued} proposes a two-step algorithm that first handles presuppositional expressions and takes the output to subsequently handle vague expressions and presupposition-vagueness interactions.%\footnote{In relation to the shared `gappy' aspect of the two phenomena noted by \cite{tye1995:sorites} (see footnote \ref{TyeFN}), it is worth noting that \cite{spector2015:7valued}'s implementation would be compatible with Tye's position, under a view where vague descriptions of borderline cases express propositions with an ambiguous truth status, and sentences involving presupposition failure express propositions that fail to receive either classical truth value.}
+
+More generally, these two formalisms can be thought of as exemplifying two radically opposed positions: a) vagueness and presupposition are simultaneously processed by a single mechanism; or b) vagueness and presupposition are processed by distinct mechanisms. A view along the lines of (a) would predict certain linguistic operations to be applicable to both vague and presuppositional expressions; for instance, local accommodation could convert a non-bivalent proposition containing a vague predicate or a presupposition trigger to a bivalent one. Given the infelicity of a borderline usage of a vague predicate and the infelicity arising from a presupposition failure would be dealt with using the same mechanism, one might expect that children's sensitivity to the `gappiness' of the two phenomena might emerge around the same time. 
+
+In contrast, a view along the lines of (b) would predict linguistic operations like local accommodation to be phenomenon-specific. Since vagueness and presupposition would be dealt with by distinct mechanisms, we might expect differences between the two phenomena to be reflected in language development, with no predicted relation between the acquisition of one and the acquisition of the other.
+
+\subsection{Experimental background}
+ 
+As we just saw, unified approaches have only developed recently, and as a consequence, few experiments have compared the two phenomena. To investigate vagueness and presupposition, \cite{Zehr:2014} adapts \posscite{Kriz:2015} paradigm for eliciting homogeneity-related truth value gaps. Zehr's aim was twofold: first to elicit truth value gaps arising from vagueness and presupposition, and second to test the following prediction of the 5-valued system: presupposition should yield different truth value judgments depending on the polarity of the sentence, whereas vagueness should be insensitive to negation.
+
+\cite{Zehr:2014} presented adult participants with positive and negative sentences involving presupposition failure and borderline instances of vague predicates. Participants were asked to assess the sentences as either: \textit{Completely false}, \textit{Completely true}, or \textit{Neither true nor false}. \cite{Zehr2015:poster} reports that participants made use of the \textit{Neither true nor false} option in both presupposition and vagueness conditions, regardless of polarity. In this experimental context then, speakers recognize that vagueness and presupposition share a certain `gappiness' in truth value.
+
+Although \textit{Neither true nor false} responses were observed for both vagueness and presupposition, the two conditions nevertheless differed with respect to the distribution of the selected response options. While vagueness predominantly triggered \textit{Neither true nor false} judgments across both polarities, positive presuppositional descriptions were judged \textit{Completely false} almost as often as they were \textit{Neither true nor false}. This result experimentally supports the theoretical distinction between vague and presuppositional sentences, but is still compatible with the existence of linguistic operations indifferently targeting vagueness and presupposition.
+
+The next result is in line with this idea. While the pattern of reported judgments for negative descriptions still differed between vagueness and presupposition, negation yielded an increase in \textit{Completely true} answers for both types of descriptions. The acceptance of negative sentences like \ref{sen:ps1neg} in contexts where the presupposition is not met is usually analyzed as resulting from the negation targeting the presuppositional content: a speaker felicitously using \ref{sen:ps1neg} effectively negates that the presupposition is satisfied (a process often described as \textit{local acommodation}). This result might reveal that negation can target the `borderline' nature of the vagueness condition in the same way that it can target a presupposition: a speaker felicitously using the negative vague sentence \ref{sen:vg1neg} would negate that the borderline case clearly falls within the bivalent extensions of the vague predicate. If negation can indeed target both types of content in the same way, this would provide further evidence that vagueness and presupposition can be given a similar representation, at least at the level at which a process like local accommodation operates. 
+
+The alignment of presupposition and vagueness in the results of \cite{Zehr:2014} stands in contrast to the results of \cite{Cremers:2015a}, who compared vagueness, presupposition, homogeneity, implicatures, and conditionals in a probability assignment task. Recall that these authors assessed for each phenomenon how participants considered `gappy' situations when establishing the probability of a positive outcome. In that experiment, participants generally treated presupposition failures as negative outcomes, whereas they treated borderline instances of vagueness as ambiguous between positive and negative outcomes.
+
+\subsection{Potential insights from acquisition} 
+
+As discussed earlier, two radically opposed views make different developmental predictions: (a) if vagueness and presupposition are processed by a single mechanism, one might expect children's sensitivity to the two to emerge around the same time (reflecting the development of the single mechanism); (b) if vagueness and presupposition are processed by distinct mechanisms, one might instead expect no particular relation between the acquisition of one and the acquisition of the other.
+
+A potential future investigation involves adapting the design of \cite{Zehr:2014} for use with children. A view along the lines of (a) would predict the following: first, if children give `gappy' responses to one phenomenon, they should also do so for the other; second, if a child gives more \textit{true} judgments for negative than for positive vague descriptions, they should also do the same for negative over positive presuppositional descriptions. In contrast, a view along the lines of (b) might lead us to expect some children to give `gappy' responses to one phenomenon while exhibiting an exclusively bivalent behavior for the other; moreover, negation might yield an increase in \textit{true} judgments for one but not the other.
+
+Some defenders of position (b) could also anchor the distinction in a semantic vs.~pragmatic opposition. One way to read \posscite{spector2015:7valued} system is to regard presupposition as being treated at the semantic level, and to regard vagueness as an ambiguity in truth value that must be pragmatically resolved. Future developmental work could investigate the implications of such a semantic/pragmatic divide for the relative timecourse of acquisition of vagueness and presupposition.
+%To the extent that pragmatics builds on semantics, one might expect children to exhibit non-bivalent behaviour for presupposition earlier than for vagueness.
+
+Finally, looking at what bivalent answers, if any, children give for each phenomenon will also be informative, in particular for derivational analyses. For instance, \cite{Abusch:2002} and \cite{Romoli:2014} propose mechanisms that derive presuppositions from propositions that are semantically \textit{false} in case of presupposition failure. \posscite{Schlenker:2009} proposal leaves open the possibility that the same presupposition trigger might actually make the sentences \textit{true} in the same conditions. Finally, \cite{sudo2012:phd} suggests that some presuppositional sentences are semantically false in situations of presupposition failure, whereas others are semantically true. From a derivational perspective, looking at children's judgments may shed light on the semantic representations from which presuppositions are derived.
+
+Further investigation into the development of vagueness also holds great potential. Positivist views according to which any entity is either in the positive or negative extension of a vague predicate (e.g., \citealt{williamson1994:vagueness}) usually draw the borderline as touching upon both the negative and positive extensions. Looking at how children characterize borderline cases and where they themselves draw the line may shed light on such issues.
+
+
+%%%%%%%%%%%%%%%
+\section{General discussion}\label{discussion}
+%%%%%%%%%%%%%%%
+
+In this paper, we have made the argument that child language data provide a very useful perspective with which to assess semantic theories about gappy phenomena. By comparing how children perform on the different gappy phenomena, developmental studies can shed light on how these phenomena should be treated within linguistic theories. We have seen that children differentiate presupposition from scalar implicature, providing support for those theories that posit different underlying mechanisms for the two phenomena. In contrast, we have seen evidence for a developmental connection between homogeneity and scalar implicature, with suggestions from developmental data that children initially adopt a scalar implicature theory of homogeneity, only later uncoupling the two phenomena. Finally, we have suggested that further developmental study may shed light on the relationship between presupposition and vagueness. 
+
+The studies we have described also suggest that gappy phenomena are not all treated alike by the child learner. When we started our discussion of gappy phenomena, we found it rather natural to group the four phenomena together. They had something in common, in that they all appear to give rise to a lack of clear Truth or Falsity under certain circumstances. It was conceivable that the child learner might also do the same, and treat the phenomena alike. But this does not appear to be the case. Here, the child data align with experimental work with adults in showing, for example, that presupposition and scalar implicature are not treated uniformly.
+
+Of course, the child data we have described provide but one piece of the puzzle. Such data can be considered hand in hand with experimental work that has been conducted with adult speakers. Both kinds of empirical work provide useful insights into how we should analyze various semantic phenomena. Our main premise is that fundamental similarities and differences will be reflected in the developmental trajectory of the respective phenomena, such that we can use child language as a means to better understand how these phenomena should be dealt with in our linguistic theories. 
+Future work should continue to refine our understanding of how various semantic phenomena are alike and different. Additionally, as we have touched upon in the previous subsections, future work should also be devoted to refining the experimental methods at our disposal, which allow us to tap into young children's intuitions about truth values and the relevant truth value gaps. 
+
+\bibliography{Bibliography}
+\bibliographystyle{sp}
+
+
+
+%%%Discard
+%For instance, \cite{Zehr:2014} reports a series of experiments comparing adults' comprehension of borderline cases of vague predicates like \ref{vague} and cases of presupposition failure like \ref{presup}. Both of these cases, as we saw above, have something in common: in `gappy' contexts like the ones described above, neither the vague sentences nor the presuppositional sentences seem to correspond clearly to True or False. Zehr asked adults to judge whether such sentences, when paired with gappy contexts, were `completely false', `completely true', or `neither'. When presented with these three response options, participants tended to select the `neither' option in response to the vagueness targets, while they were split between `completely false' and `neither' in response to the presupposition targets. When compared with strictly true and strictly false control sentences, this kind of result not only validates the notion that such sentences are indeed `gappy' in such contexts, they also reveal in this case that the two pertinent phenomena are not treated the same by adult native speakers. In other words, the fact that adults respond differently to vagueness and presupposition may speak against a unified treatment of the two phenomena. 
+
+%As some researchers have begun to assess the possible parallels and disparities among these phenomena through experimental work with adults, other researchers have also begun to make use of child language data to shed light on the possible relationships among the various phenomena. For instance, \cite*{Caponigro:2010} look to child language acquisition data to investigate a potential connection between maximality in plural definite descriptions like \Next and free relative clauses like \NNext. 
+%
+%\ex. The things in the box are edible.
+%
+%\ex. What is in the box is edible.
+%
+%Despite their syntactic differences, some analyses have posited that the two constructions have a common semantics; both have been analyzed as referential expressions that trigger \textit{maximality}, i.e.~they refer to the maximal element of a given set (\citealt{Jacobson:1995,Rullmann:1995,Dayal:1996,Caponigro:2003,Caponigro:2004}). \cite{Caponigro:2010} look to child language data to investigate whether the two expressions of maximality can be attributed to the same underlying semantic operator. 
+%
+%By showing that children acquire maximality in the two constructions roughly concurrently, such research sheds light on the nature of the individual pheomena; in this case, the authors provide evidence that the mechanism that underlies maximal interpretations in the two cases is likely the same. 
+%
+%Two further examples of comparative work in development are found in studies reported in \cite*{Tieu:2015} and \cite*{Tieu:2015j}. These two studies compared standard cases of scalar implicatures like \Next, with free choice inferences like \ref{fc} and plurality inferences like \ref{pl}, respectively.
+%
+%\ex. Jack picked some of the apples. \\
+%$\rightsquigarrow$ Jack didn't pick all of the apples.
+%
+%\ex. \label{fc} Jack may have the ice cream or the cake. \\
+%$\rightsquigarrow$ Jack may have the ice cream and the cake.
+%
+%\ex. \label{pl} Jack picked apples. \\
+%$\rightsquigarrow$ Jack picked more than one apple. 
+%
+%Theories have posited that free choice inferences can be derived as a kind of scalar implicature (\citealt{Kratzer:2002,Alonso-Ovalle:2005,Fox:2007,Klinedinst:2007,Chemla:2009,vanRooij:2010,Franke:2011,Chierchia:2013}). Likewise, some semantic theories posit that the `more-than-one' meaning of plural morphology can be derived as a scalar implicature (\citealt{Spector:2007,Zweig:2009,Ivlieva:2013,Magri:2014}).  Such uniformity analyses make the prediction that, all else being equal, children should perform uniformly on standard scalar implicatures and free choice inferences on the one hand, and plurality inferences on the other. In other words, developmental data can help to shed light on how these phenomena should be treated in linguistic theories. In the former case, \cite{Tieu:2015} show that in fact children's performance on free choice inferences is adult-like, in contrast to their relatively poor performance on scalar implicatures. Such data speak against uniformity analyses; minimally, more has to be said in order to explain the developmental data (see \cite{Tieu:2015} for discussion of how scalar implicatures and free choice inferences may differ in a a way that critically manifests itself in acquisition). In the latter case, \cite{Tieu:2015j} show that children's performance on plurality inferences is on a par with their performance on scalar implicatures; these authors report a strong correlation between children's performance on the two kinds of inferences. Such data speak to a developmental connection between the phenomena under question, and lend support to theories that analyze the two kinds of inferences on a par. 
+
+\end{document}
